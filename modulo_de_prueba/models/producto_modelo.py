@@ -1,12 +1,12 @@
 from odoo import models, fields
 
 
-class producto_modelo (models.Model):
+class productoModelo(models.Model):
     _name = 'producto.modelo'
 
     cod = fields.Integer('Código')
     descripcion = fields.Text('Descripcion')
-    marca = fields.Char('Marca')
+    marca = fields.Char("Marca")
     categoria = fields.Selection(
         string="Categoría",
         selection=[
