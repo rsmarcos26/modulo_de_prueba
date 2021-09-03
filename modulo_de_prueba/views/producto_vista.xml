@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='producto_vista_action' model='ir.actions.act_window'>
+        <field name="name">Productos de Prueba</field>
+        <field name="res_model">producto.modelo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Módulo de Prueba" id="opciones_menu"/>
+    <menuitem name="Productos" id="producto_prueba_menu"
+              parent="opciones_menu" action="producto_vista_action"/>
+
+    <record id="producto_modelo_vista_tree" model="ir.ui.view">
+        <field name="name">Lista de Productos</field>
+        <field name="model">producto.modelo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="cod"/>
+                <field name="descripcion"/>
+                <field name="marca"/>
+                <field name="categoria"/>
+                <field name="precio"/>
+            </tree>
+        </field>
+    </record>
+
+<!--
+    <record id="factura_prueba_vista_form" model="ir.ui.view">
+        <field name="name">Nueva Factura</field>
+        <field name="model">factura.modelo</field>
+        <field name="arch" type="xml">
+    </record>
+    -->
+</odoo>

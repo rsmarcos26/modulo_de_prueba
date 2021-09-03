@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='factura_vista_action' model='ir.actions.act_window'>
+        <field name="name">Facturas de Prueba</field>
+        <field name="res_model">factura.modelo</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Módulo de Prueba" id="opciones_menu"/>
+    <menuitem name="Facturas" id="factura_prueba_menu"
+              parent="opciones_menu" action="factura_vista_action"/>
+
+    <record id="factura_modelo_vista_tree" model="ir.ui.view">
+        <field name="name">Lista de Facturas</field>
+        <field name="model">factura.modelo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="numero"/>
+                <field name="ruc"/>
+                <field name="cliente"/>
+                <field name="fecha_venta"/>
+                <field name="forma_pago"/>
+            </tree>
+        </field>
+    </record>
+
+<!--
+    <record id="factura_prueba_vista_form" model="ir.ui.view">
+        <field name="name">Nueva Factura</field>
+        <field name="model">factura.modelo</field>
+        <field name="arch" type="xml">
+    </record>
+    -->
+</odoo>
