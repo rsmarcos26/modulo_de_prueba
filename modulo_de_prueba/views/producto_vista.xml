@@ -18,8 +18,10 @@
                 <field name="cod"/>
                 <field name="descripcion"/>
                 <field name="marca"/>
-                <field name="categoria"/>
-                <field name="precio"/>
+                <field name="categoria_id"/>
+                <field name="valor_venta"/>
+                <field name="igv"/>
+                <field name="precio_venta"/>
             </tree>
         </field>
     </record>

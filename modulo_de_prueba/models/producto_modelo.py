@@ -1,20 +1,27 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
-class productoModelo(models.Model):
+class ProductoModelo(models.Model):
     _name = 'producto.modelo'
 
     cod = fields.Integer('Código')
     descripcion = fields.Text('Descripcion')
     marca = fields.Char("Marca")
-    categoria = fields.Selection(
-        string="Categoría",
-        selection=[
-            ('limpieza', "Limpieza"),
-            ('deco', "Decoración"),
-            ('cocina', "Cocina"),
-            ('alimentos', "Alimentos"),
-            ('electro', "Electrónica")
-        ]
+    categoria_id = fields.Many2one('producto.modelo.categoria')
+    valor_venta = fields.Float('VV')
+    igv = fields.Float(
+        string='IGV',
+        compute='_igv'
     )
-    precio = fields.Float('Precio')
+    precio_venta = fields.Float(
+        string='PV',
+        compute='_precio_venta'
+    )
+
+    @api.depends('valor_venta')
+    def _igv(self):
+        self.igv = self.valor_venta * 0.18
+
+    @api.depends('valor_venta')
+    def _precio_venta(self):
+        self.precio_venta = self.valor_venta * 1.18
