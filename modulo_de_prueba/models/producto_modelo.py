@@ -25,3 +25,13 @@ class ProductoModelo(models.Model):
     @api.depends('valor_venta')
     def _precio_venta(self):
         self.precio_venta = self.valor_venta * 1.18
+
+    @api.onchange('precio_venta')
+    def _mensaje(self):
+        if self.precio_venta != 0:
+            return {
+                'warning': {
+                    'title': 'Precio de Venta actualizado',
+                    'message': 'El IGV y el precio de venta han sido actualizados'
+                }
+            }

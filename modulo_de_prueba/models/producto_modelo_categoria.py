@@ -16,9 +16,10 @@ class ProductoModeloCategoria(models.Model):
         string='Categoría hijas'
     )
 
-    @api.constraints('parent_id')
+    """"@api.constraints('parent_id')
     def _check_hierarchy(self):
         if not self._check_recursion():
             raise models.ValidationError(
                 'Error! no puedes crear categorías recursivas.'
             )
+    """
