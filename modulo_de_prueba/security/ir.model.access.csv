@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_factura_modelo_users, access.factura.modelo_users,model_factura_modelo,group_prueba_users,1,0,0,0
+access_factura_modelo_admins, access.factura.modelo_admins,model_factura_modelo,group_prueba_admins,1,1,1,1
+
+access_producto_modelo_users, access.producto.modelo_users,model_producto_modelo,group_prueba_users,1,0,0,0
+access_producto_modelo_admins, access.producto.modelo_admins,model_producto_modelo,group_prueba_admins,1,1,1,1

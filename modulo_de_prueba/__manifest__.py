@@ -2,10 +2,14 @@
     'name': 'Modulo de Prueba',
     'summary': 'Este es un módulo de prueba',
     'author': 'Ronald',
-    'category': 'Pruebas',
-    'depends': ['base'],
+
+    'depends': ['base','website'],
+
     'data': [
-        'views/factura_vista.xml',
-        'views/producto_vista.xml'
+        'security/groups.xml',
+        'security/ir.model.access.csv',
+        #'views/factura_vista.xml',
+        #'views/producto_vista.xml',
+        'views/templates.xml'
     ]
 }
